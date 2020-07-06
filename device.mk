@@ -33,6 +33,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libshims_sensorlistener
 
+# Display
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.hwui.use_buffer_age=false \
+    ro.sf.lcd_density=480
+
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
@@ -76,6 +81,14 @@ PRODUCT_PACKAGES += \
     stml0xx \
     sensors.msm8916 \
     sensorhub.msm8916
+
+# RRO
+PRODUCT_ENFORCE_RRO_TARGETS := \
+    framework-res
+
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
+    $(LOCAL_PATH)/overlay-lineage/lineage-sdk \
+    $(LOCAL_PATH)/overlay/packages/apps/Snap
 
 # Thermal
 PRODUCT_COPY_FILES += \
