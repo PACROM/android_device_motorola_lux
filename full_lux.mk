@@ -17,6 +17,10 @@
 # Inherit from lux device
 $(call inherit-product, device/motorola/lux/device.mk)
 
+# Inherit some common PACROM stuff.
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_GAPPS_ARCH := arm
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := lux
 PRODUCT_NAME := full_lux
